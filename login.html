@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permisos, vacaciones o licencias Bomberos</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body class="min-h-screen flex items-center justify-center">
+
+    <div class="w-full max-w-md lg:max-w-5xl lg:rounded-3xl overflow-hidden">
+
+        <!-- LOGIN -->
+        <div class="flex flex-col lg:flex-row ">
+
+            <!-- iazquierda -->
+            <div class="px-6 py-12 pb-16 lg:pb-12 rounded-b-3xl lg:rounded-none lg:w-1/2 flex flex-col justify-center gradiente p">
+
+                <div class="flex flex-col items-center lg:px-12">
+
+                    <img src="./img/logo.png" alt="Bomberos" class="w-24 h-24 lg:w-32 lg:h-32 rounded-full mb-4 object-cover" />
+
+                    <h1 class="text-white text-2xl lg:text-3xl font-bold">
+                        Bomberos Voluntarios
+                    </h1>
+
+                    <p class="text-white/90 text-sm lg:text-base mt-1">
+                        Yopal
+                    </p>
+
+                    <p class="text-white/80 text-xs font-bold lg:text-sm mt-4 text-center max-w-xs">
+                        Sistema de gestión de permisos, vacaciones o licencias.
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="px-6 -mt-8 lg:mt-0 flex-1 flex items-center justify-center p-4">
+
+                <div class="bg-white rounded-[30px] shadow-xl p-8 w-full max-w-md lg:mx-8">
+
+                    <h2 class="text-gray-900 text-xl font-bold mb-6 text-center">
+                        Iniciar Sesión
+                    </h2>
+
+                    <!-- USER -->
+                    <div class="mb-6">
+
+                        <label class="block text-gray-700 font-bold mb-3">
+                            Usuario
+                        </label>
+
+                        <div class="relative">
+
+                            <input type="text" placeholder="Ingresa tu usuario"
+                                class="w-full p-4 pl-12 rounded-[20px] bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500" />
+
+                        </div>
+                    </div>
+
+                    <!-- PIN -->
+                    <div class="mb-8">
+
+                        <label class="block text-gray-700 font-bold mb-3">
+                            PIN (4 dígitos)
+                        </label>
+
+                        <input type="password" maxlength="4" placeholder="••••"
+                            class="w-full p-4 rounded-[20px] bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 text-center text-2xl tracking-widest" />
+
+                    </div>
+
+                    <!-- BUTTON -->
+                    <div class="flex items-center justify-center">
+                        <button
+                            class="w-1/2 bg-gradient-to-r from-red-600 to-red-500 text-white p-2 rounded-[20px] font-bold shadow-lg transition-all hover:shadow-xl">
+                            <a href="./jefes-inicio.html">Ingresar</a>
+                        </button>
+                    </div>
+
+
+                    <!-- DEMO -->
+                    <div class="mt-6 p-4 bg-gray-50 rounded-[20px]">
+
+                        <p class="text-xs text-gray-600 text-center mb-2">
+                            Demostracion:
+                        </p>
+
+                        <p class="text-xs text-gray-500 text-center">
+                            Usuario:
+                            <strong>teniente</strong>
+                            PIN:
+                            <strong>1234</strong>
+                        </p>
+
+                        <p class="text-xs text-gray-500 text-center">
+                            Usuario:
+                            <strong>usuario</strong>
+                            PIN:
+                            <strong>0000</strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
