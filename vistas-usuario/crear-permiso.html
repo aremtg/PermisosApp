@@ -8,13 +8,366 @@
     <!-- Tailwind -->
     <link rel="stylesheet" href="/login.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
-<body class="h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-    <div>
-        hola tatiana 
-        <a href="/jefes-inicio.html" class="text-blue-500 hover:text-blue-700">volver atras</a>
+<body class="bg-gray-100 h-screen flex items-center justify-center flex flex-col">
+   
+
+     <div class="w-full px-6 py-6 gradiente" >
+    <div class="flex items-center gap-4 mb-2">
+      <button onclick="window.history.back()" class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all" aria-label="Volver">
+        <!-- ChevronLeft Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <h1 class="text-white text-xl lg:text-2xl font-bold">Configuración de Firma</h1>
     </div>
+  </div>
+ <!-- contenedor principal -->
+    <div class="w-full max-w-md lg:max-w-7xl h-full lg:rounded-3xl lg:shadow-2xl lg:my-8 lg:h-[calc(100%-4rem)] overflow-hidden bg-white">
+        
+
+        <div>
+            <form id="form-permiso" class="p-6 md:p-8 space-y-6 overflow-y-auto h-[calc(100vh-8rem)]">
+
+                <div class="">
+                    <label for="cedula" class="block text-sm font-medium text-slate-700 mb-2">Número de Cédula</label>
+                    <div class="relative rounded-2xl shadow-sm">
+                        <input type="number" id="cedula" name="cedula" placeholder="Cédula de ciudadanía" required
+                            class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 text-slate-800 placeholder-slate-400 transition-all" />
+                        <input type="button" value="Verificar"
+                            class="absolute right-1 top-1/2 -translate-y-1/2 bg-red-600 text-white px-4 py-2 rounded-2xl hover:bg-red-700 shadow-md shadow-red-600/10 transition-all" />
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1.5 px-1">El sistema autocompletará tu nombre, cargo y teléfono
+                        al ingresar la cédula.</p>
+                </div>
+
+                <hr class="border-slate-100" />
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-3">Tipo de Permiso</label>
+                    <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
+                        <label
+                            class="flex items-center justify-center gap-2 p-3 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:bg-slate-100/70 transition-all group">
+                            <input type="radio" name="tipo_permiso" value="permiso personal" class="accent-red-600 h-4 w-4"
+                                checked />
+                            <span class="text-sm font-medium text-slate-600 group-hover:text-slate-800">Permiso Personal</span>
+                        </label>
+                        <label
+                            class="flex items-center justify-center gap-2 p-3 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:bg-slate-100/70 transition-all group">
+                            <input type="radio" name="tipo_permiso" value="vacaciones" class="accent-red-600 h-4 w-4" />
+                            <span
+                                class="text-sm font-medium text-slate-600 group-hover:text-slate-800">Vacaciones</span>
+                        </label>
+                        <label
+                            class="flex items-center justify-center gap-2 p-3 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:bg-slate-100/70 transition-all group">
+                            <input type="radio" name="tipo_permiso" value="licencia" class="accent-red-600 h-4 w-4" />
+                            <span class="text-sm font-medium text-slate-600 group-hover:text-slate-800">Licencia</span>
+                        </label>
+                        <label
+                            class="flex items-center justify-center gap-2 p-3 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:bg-slate-100/70 transition-all group">
+                            <input type="radio" name="tipo_permiso" value="mision" class="accent-red-600 h-4 w-4" />
+                            <span class="text-sm font-medium text-slate-600 group-hover:text-slate-800">Mision
+                                Institucional</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="fecha_inicio" class="block text-sm font-medium text-slate-700 mb-2">Desde el
+                            día</label>
+                        <input type="date" id="fecha_inicio" name="fecha_inicio" required
+                            class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 text-slate-800 transition-all" />
+                    </div>
+                    <div>
+                        <label for="fecha_fin" class="block text-sm font-medium text-slate-700 mb-2">Hasta el
+                            día</label>
+                        <input type="date" id="fecha_fin" name="fecha_fin" required
+                            class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 text-slate-800 transition-all" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="hora_inicio" class="block text-sm font-medium text-slate-700 mb-2">Hora de
+                            Inicio</label>
+                        <input type="time" id="hora_inicio" name="hora_inicio" required
+                            class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 text-slate-800 transition-all" />
+                    </div>
+                    <div>
+                        <label for="hora_fin" class="block text-sm font-medium text-slate-700 mb-2">Hora de
+                            Finalización</label>
+                        <input type="time" id="hora_fin" name="hora_fin" required
+                            class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 text-slate-800 transition-all" />
+                    </div>
+                </div>
+
+                <div>
+                    <label for="motivo" class="block text-sm font-medium text-slate-700 mb-2">Motivo del Permiso</label>
+                    <textarea id="motivo" name="motivo" rows="3"
+                        placeholder="Ej: Cambio de turno por curso, calamidad doméstica, etc." required
+                        class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 text-slate-800 placeholder-slate-400 transition-all resize-none"></textarea>
+                    <hr class="border-slate-100 my-4" />
+                    <div>
+                        <h1 class="text-slate-400 text-xs">
+                            <span class="font-bold text-slate-800 bg-slate-50">NOTA importante:</span>
+                            Cuando se trata de vacaiones, se debe solicitar por lo menos con 2 meses de anteriosridad a
+                            la fecha que se requiere el permiso. Segun instructivo RH-FT-01. Permisos personales, se
+                            deben solicitar por lo menos con 2 dias de anterioridad al dia que se requiere el permiso.
+                            De igual forma la compensacion del permiso debera ser dentro del mismo mes del permiso.<br>
+                            No sera considerado accidente de trabajo aquellos permisos en los que no se realicen
+                            misiones instirucionales ordenadas por el empleador.
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium text-slate-700">Firma del Solicitante</label>
+                    <div
+                        class="relative w-full h-44 bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl overflow-hidden group hover:border-red-300 transition-all">
+                        <canvas id="canvas-firma" class="absolute inset-0 w-full h-full cursor-crosshair"></canvas>
+                        <div class="absolute bottom-12 left-10 right-10 border-t border-slate-300"></div>
+                        <div
+                            class="absolute bottom-3 left-0 right-0 text-center text-xs text-slate-400 pointer-events-none">
+                            Escriba su firma aquí (Táctil o Mouse)
+                        </div>
+                        <button type="button" id="limpiar-firma"
+                            class="absolute top-3 right-3 bg-white hover:bg-slate-100 text-slate-500 hover:text-red-600 text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm transition-all">
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+                <!-- opciones finales -->
+                <div class="flex gap-3 pt-2 pb-6">
+                    <button type="button"
+                        class="flex-1 py-3.5 border border-slate-200 text-slate-600 font-semibold rounded-2xl hover:bg-white transition-all">
+                        Cancelar
+                    </button>
+                    <button type="submit"
+                        class="flex-1 py-3.5 bg-red-600 text-white font-semibold rounded-2xl hover:bg-red-700 shadow-md shadow-red-600/10 transition-all">
+                        Enviar Solicitud
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script>
+        // scrip de la firma digital
+        const canvas = document.getElementById('canvas-firma');
+        const ctx = canvas.getContext('2d');
+        const botonLimpiar = document.getElementById('limpiar-firma');
+
+        let dibujando = false;
+        let ultimaPos = { x: 0, y: 0 };
+        let ultimoGrosor = 3;
+        let ultimoTiempo = Date.now();
+
+        function ajustarCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+
+            ctx.strokeStyle = '#0f172a';
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+        }
+
+        ajustarCanvas();
+
+        function obtenerPosicion(e) {
+            const rect = canvas.getBoundingClientRect();
+            const clienteX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clienteY = e.touches ? e.touches[0].clientY : e.clientY;
+            return { x: clienteX - rect.left, y: clienteY - rect.top };
+        }
+
+        function iniciarDibujo(e) {
+            dibujando = true;
+            const pos = obtenerPosicion(e);
+            ultimaPos = pos;
+            ultimoTiempo = Date.now();
+            ultimoGrosor = 3;
+        }
+
+        function dibujar(e) {
+            if (!dibujando) return;
+            if (e.touches && e.target === canvas) e.preventDefault();
+
+            const pos = obtenerPosicion(e);
+            const tiempoActual = Date.now();
+
+            const distancia = Math.sqrt(Math.pow(pos.x - ultimaPos.x, 2) + Math.pow(pos.y - ultimaPos.y, 2));
+            const tiempo = tiempoActual - ultimoTiempo;
+            const velocidad = tiempo > 0 ? distancia / tiempo : 0;
+
+            let grosorObjetivo = Math.max(1.5, Math.min(4.5, 4.5 - velocidad * 1.2));
+            let grosorActual = ultimoGrosor + (grosorObjetivo - ultimoGrosor) * 0.3;
+
+            ctx.beginPath();
+            ctx.moveTo(ultimaPos.x, ultimaPos.y);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.lineWidth = grosorActual;
+            ctx.stroke();
+
+            ultimaPos = pos;
+            ultimoTiempo = tiempoActual;
+            ultimoGrosor = grosorActual;
+        }
+
+        canvas.addEventListener('mousedown', iniciarDibujo);
+        canvas.addEventListener('mousemove', dibujar);
+        window.addEventListener('mouseup', () => dibujando = false);
+
+        canvas.addEventListener('touchstart', iniciarDibujo, { passive: false });
+        canvas.addEventListener('touchmove', dibujar, { passive: false });
+        window.addEventListener('touchend', () => dibujando = false);
+
+        botonLimpiar.addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ajustarCanvas();
+        });
+
+        // ==========================================
+        // GENERACIÓN Y DESCARGA DE PDF
+        // ==========================================
+        document.getElementById('form-permiso').addEventListener('submit', function (e) {
+            e.preventDefault(); // Evita que la página se recargue
+
+            // Importar jsPDF del entorno global
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({
+                orientation: 'p',
+                unit: 'mm',
+                format: 'a4'
+            });
+
+            // Obtener datos del formulario
+            const cedula = document.getElementById('cedula').value;
+            const tipoPermiso = document.querySelector('input[name="tipo_permiso"]:checked').value.toUpperCase();
+            const fechaInicio = document.getElementById('fecha_inicio').value;
+            const fechaFin = document.getElementById('fecha_fin').value;
+            const horaInicio = document.getElementById('hora_inicio').value;
+            const horaFin = document.getElementById('hora_fin').value;
+            const motivo = document.getElementById('motivo').value;
+
+            // --- DISEÑO DEL PDF ---
+            // logo encabezado
+            const logoImgData = '/img/logo.png';
+            try {
+                // Parámetros: addImage(ruta_o_base64, formato, x, y, ancho, alto)
+                doc.addImage(logoImgData, 'PNG', 15, 5, 30, 30);
+            } catch (error) {
+                console.error("No se pudo cargar el logo en el encabezado", error);
+            }
+
+            // ==========================================
+            // 2. TEXTO DEL ENCABEZADO
+            // ==========================================
+            doc.setTextColor(0, 0, 0); //negro por defecto
+            doc.setFont('Helvetica', 'bold');
+            doc.setFontSize(10);
+
+            // Cambiamos la posición X a 115 para que empiece después del logo y se centre en el espacio restante
+            doc.text('SOLICITUD DE PERMISO, VACACIONES O LICENCIA', 105, 20, { align: 'center' });
+            doc.text('RH-FT-01', 195, 16, { align: 'center' });
+            doc.text('Version 01', 194, 20, { align: 'center' });
+            doc.text(`Fecha: ${new Date().toLocaleDateString()}`, 189, 24, { align: 'center' });
+            // Cuerpo del Documento
+            doc.setTextColor(0,0,0); // negro por defecto
+            doc.setFontSize(11);
+
+            // Información General
+            doc.setFont('Helvetica', 'bold');
+            doc.text('INFORMACIÓN DEL PERMISO', 105, 45, { align: 'center' });
+            doc.setDrawColor(226, 232, 240); // Línea sutil de separación
+            doc.line(15, 47, 195, 47);
+
+            doc.setFont('Helvetica', 'normal');
+            doc.text(`N° Cédula:`, 15, 55);
+            doc.setFont('Helvetica', 'bold');
+            doc.text(`${cedula}`, 35, 55);
+
+            doc.setFont('Helvetica', 'normal');
+            doc.text(`Tipo de Permiso:`, 15, 63);
+            doc.setFont('Helvetica', 'bold');
+            doc.text(`${tipoPermiso}`, 45, 63);
+
+            // Fechas y Horas (Estructurado en Bloques)
+            doc.setFont('Helvetica', 'bold');
+            doc.text('VIGENCIA Y HORARIOS', 15, 78);
+            doc.line(15, 80, 195, 80);
+
+            doc.setFont('Helvetica', 'normal');
+            doc.text(`Desde el día:`, 15, 88);
+            doc.setFont('Helvetica', 'bold');
+            doc.text(`${fechaInicio}`, 45, 88);
+
+            doc.setFont('Helvetica', 'normal');
+            doc.text(`Hasta el día:`, 110, 88);
+            doc.setFont('Helvetica', 'bold');
+            doc.text(`${fechaFin}`, 140, 88);
+
+            doc.setFont('Helvetica', 'normal');
+            doc.text(`Hora de Inicio:`, 15, 96);
+            doc.setFont('Helvetica', 'bold');
+            doc.text(`${horaInicio}`, 45, 96);
+
+            doc.setFont('Helvetica', 'normal');
+            doc.text(`Hora Fin:`, 110, 96);
+            doc.setFont('Helvetica', 'bold');
+            doc.text(`${horaFin}`, 140, 96);
+
+            // Detalles/Motivos
+            doc.setFont('Helvetica', 'bold');
+            doc.setFontSize(11);
+            doc.text('MOTIVO DEL PERMISO', 15, 111);
+            doc.setDrawColor(226, 232, 240);
+            doc.line(15, 113, 195, 113);
+
+            doc.setFont('Helvetica', 'normal');
+            // Cortamos el motivo para que ocupe máximo 4 líneas estrictas
+            let motivoLíneas = doc.splitTextToSize(motivo, 180);
+            if (motivoLíneas.length > 4) {
+                motivoLíneas = motivoLíneas.slice(0, 4);
+                motivoLíneas[3] = motivoLíneas[3] + "...";
+            }
+            doc.text(motivoLíneas, 15, 119); // Subido a 119
+
+            // ==========================================================
+            // SECCIÓN DE FIRMA: COMPRIMIDA Y SUBIDA (Todo fijo en la mitad de la hoja)
+            // ==========================================================
+            doc.setFont('Helvetica', 'bold');
+            doc.text('FIRMA DEL SOLICITANTE', 15, 148); // Subido drásticamente de 175 a 148
+            doc.setDrawColor(226, 232, 240);
+            doc.line(15, 150, 195, 150); // Subido de 177 a 150
+
+            // Convertir la firma del canvas a Imagen e incrustarla inmediatamente abajo
+            try {
+                const firmaImgData = canvas.toDataURL('image/png');
+                // Se ubica en Y = 152 (justo debajo de la línea divisoria)
+                doc.addImage(firmaImgData, 'PNG', 15, 152, 70, 22);
+            } catch (error) {
+                console.error("No se pudo cargar la firma en el PDF", error);
+            }
+
+            // Línea manual para firmar sobre ella, subida de 210 a 174
+            doc.setDrawColor(15, 23, 42);
+            doc.line(15, 174, 85, 174);
+
+            // Texto aclaratorio final, subido de 215 a 179
+            doc.setFont('Helvetica', 'normal');
+            doc.setFontSize(9);
+            doc.text('Firma Digitalizada / Autenticada', 15, 179);
+
+            // Descargar el archivo PDF automáticamente
+            doc.save(`${tipoPermiso}_${cedula || 'SinCedula'}.pdf`);
+        });
+    </script>
+
 </body>
 
 </html>

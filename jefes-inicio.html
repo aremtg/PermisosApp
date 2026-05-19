@@ -13,11 +13,13 @@
 
     <div class="w-full max-w-md lg:max-w-7xl h-full lg:rounded-3xl lg:shadow-2xl lg:my-8 lg:h-[calc(100%-4rem)] overflow-hidden bg-white">
 
-        <div class="h-full flex flex-col lg:flex-row">
-            <!-- gradiente y menu izquierda-->
-            <div class="px-6 py-8 pb-12 lg:pb-8 rounded-b-3xl lg:rounded-none lg:w-80 lg:flex-shrink-0 gradiente">
-                <div class="flex items-center justify-between mb-6 lg:flex-col lg:items-start lg:gap-6">
-                    <div class="flex items-center gap-2 lg:self-end">
+        <div class="h-full flex flex-col lg:flex-row ">
+            <!-- gradiente y menu derecha-->
+            <div class="px-6 py-8 pb-12 lg:pb-8 rounded-b-3xl lg:rounded-none lg:w-80 flex-shrink-0 lg:text-center gradiente">
+                <!-- caja logo mas botones -->
+                <div class="flex flex-col lg:flex-col lg:items-center lg:gap-6">
+                    <!-- caja de botones -->
+                    <div class="flex self-end gap-2">
                         <button class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -33,15 +35,17 @@
                             </svg>
                         </a>
                     </div>
-                    <img src="./img/logo.png" alt="Bomberos"
-                        class="w-24 h-24 lg:w-32 lg:h-32 rounded-full mb-4 object-cover" />
+                    <!-- temina caja -->
+                    <!-- logo -->
+                    <img src="./img/COMANDANTE.jpeg" alt="Bomberos" class="w-32 h-32 lg:w-32 lg:h-32 rounded-full mb-4 object-cover border-4 border-white " />
                 </div>
-                <h1 class="text-white text-2xl font-bold">Hola, Teniente <span class="">ROJAS</span></h1>
-                <p class="text-white/90 text-sm lg:text-base mt-1">
+
+                 <h1 class="text-white text-2xl font-bold">Hola, Comandante <span class="">Rafael Rojas</span></h1>
+                 <p class="text-white/90 text-sm lg:text-base mt-1">
                     Panel de Administración para jefes de personal, aqui podras crear, revisar, otorgar y rechachar
                     permisos.</p>
             </div>
-            <!-- derecha -->
+            <!-- izquierda -->
             <div class="px-6 -mt-6 lg:mt-0 flex-1 overflow-y-auto pb-6 lg:px-12 lg:py-12 lg:bg-gray-50">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-6">
                     <!-- boton -->
