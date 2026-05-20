@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,87 +9,111 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 h-screen flex flex-col">
 
-  <!-- Header -->
-  <div class="px-6 py-6 rounded-b-3xl lg:rounded-none gradiente" >
-    <div class="flex items-center gap-4 mb-2">
-      <button onclick="window.history.back()" class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all" aria-label="Volver">
-        <!-- ChevronLeft Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      <h1 class="text-white text-xl lg:text-2xl font-bold">Configuración de Firma</h1>
-    </div>
-  </div>
+<body class="h-screen bg-white flex items-center justify-center">
 
-  <!-- Signature Configuration -->
-  <div class="flex-1 px-6 py-6 lg:flex lg:items-center lg:justify-center">
-    <div class="lg:w-full lg:max-w-2xl">
-      <div class="bg-white rounded-[30px] shadow-lg p-8">
-        <div class="flex flex-col items-center">
-          
-          <div class="w-20 h-20 bg-gradient-to-br from-gray-700 to-gray-600 rounded-full flex items-center justify-center mb-6">
-            <!-- PenTool Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-            </svg>
-          </div>
+  <div
+    class="w-full max-w-md lg:max-w-7xl h-full lg:rounded-3xl lg:shadow-2xl lg:my-8 lg:h-[calc(100%-4rem)] overflow-hidden ">
 
-          <h2 class="text-gray-900 text-xl font-bold mb-2">Firma Digital</h2>
-          <p class="text-gray-600 text-sm text-center mb-6">
-            Sube tu firma en formato PNG para aprobar solicitudes
-          </p>
-
-          <!-- Estado 1: No hay firma configurada (Visible por defecto) -->
-          <div id="empty-state" class="w-full mb-6">
-            <div class="bg-gray-50 rounded-[20px] p-12 border-2 border-dashed border-gray-300 text-center">
-              <!-- Upload Icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+    <div class="h-full flex flex-col lg:flex-row ">
+      <!-- bg-principal y menu derecha-->
+      <div
+        class="px-6 py-8 pb-12 lg:pb-8 rounded-b-3xl lg:rounded-none lg:w-80 flex-shrink-0 lg:text-center bg-principal">
+        <!-- caja logo mas botones -->
+        <div class="flex flex-col lg:flex-col lg:items-center lg:gap-6">
+          <!-- caja de botones -->
+          <div class="flex self-end gap-2">
+            <button class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                </path>
               </svg>
-              <p class="text-sm text-gray-500">No hay firma configurada</p>
-            </div>
+            </button>
+            <a href="login.html" class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                </path>
+              </svg>
+            </a>
           </div>
-
-          <!-- Estado 2: Vista previa de la firma (Oculto por defecto) -->
-          <div id="preview-state" class="w-full mb-6 hidden">
-            <div class="bg-gray-50 rounded-[20px] p-6 border-2 border-gray-200">
-              <p class="text-sm text-gray-600 mb-3 text-center">Vista previa:</p>
-              <img id="signature-preview" src="" alt="Firma" class="max-h-32 mx-auto object-contain" />
-            </div>
-          </div>
-
-          <!-- Botón de Subir / Cambiar -->
-          <label class="w-full block cursor-pointer">
-            <input type="file" id="file-input" accept="image/png" class="hidden" />
-            <div id="upload-btn-text" class="w-full bg-gradient-to-r from-red-600 to-red-500 text-white p-5 rounded-[30px] font-bold shadow-lg transition-all hover:shadow-xl text-center">
-              Subir Firma PNG
-            </div>
-          </label>
-
-          <!-- Botón de Eliminar (Oculto por defecto) -->
-          <button id="delete-btn" class="w-full mt-3 bg-white text-red-600 p-5 rounded-[30px] font-bold shadow-md transition-all hover:shadow-lg border-2 border-red-600 hidden">
-            Eliminar Firma
-          </button>
-
-          <!-- Requisitos -->
-          <div class="mt-6 p-4 bg-blue-50 rounded-[20px] w-full">
-            <p class="text-xs text-gray-600 mb-1"><strong>Requisitos:</strong></p>
-            <ul class="text-xs text-gray-500 space-y-1">
-              <li>• Formato: PNG con fondo transparente</li>
-              <li>• Tamaño recomendado: 400x150 px</li>
-              <li>• Debe ser legible y profesional</li>
-            </ul>
-          </div>
-
+          <!-- temina caja -->
+          <!-- logo -->
+          <img src="./img/COMANDANTE.jpeg" alt="Bomberos"
+            class="w-32 h-32 lg:w-32 lg:h-32 rounded-full mb-4 object-cover border-4 border-white " />
         </div>
+
+        <h1 class="text-white text-2xl font-bold">Hola, Comandante <span class="">Rafael Rojas</span></h1>
+        <p class="text-white/90 text-sm lg:text-base mt-1">
+          Panel de Administración para jefes de personal, aqui podras crear, revisar, otorgar y rechachar
+          permisos.</p>
+      </div>
+      <!-- derecha -->
+      <div class="px-6 -mt-6 lg:mt-0 flex-1  pb-6 lg:px-12 lg:py-12 lg:bg-gray-50 relative">
+        <!-- Contenedor superior para el botón de Back -->
+        <div class="absolute top-3 left-8 ">
+          <button onclick="history.back()"
+            class="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-red-600 to-red-500 rounded-full hover:bg-gray-300 transition-all shadow-lg"
+            aria-label="Volver">
+            <img src="/icons/lef.svg" alt="" class="w-7 text-white">
+          </button>
+        </div>
+        <!-- Contenedor Principal de la Firma -->
+        <div class="bg-white rounded-[30px] shadow-lg p-8 mx-auto max-w-lg">
+
+
+          <div class="flex flex-col items-center">
+            <h2 class="text-gray-900 text-xl font-bold mb-2">Firma Digital</h2>
+            <p class="text-gray-600 text-sm text-center mb-6">
+              Sube tu firma en formato PNG para aprobar solicitudes
+            </p>
+
+            <!-- Estado 1: No hay firma configurada -->
+            <div id="empty-state" class="w-full mb-6">
+              <div class="bg-gray-50 rounded-[20px] p-12 border-2 border-dashed border-gray-300 text-center">
+                <img src="/icons/upload.svg" alt="cargar firma" class="w-12 h-12 mx-auto mb-4 opacity-50" />
+                <p class="text-sm text-gray-500">No hay firma configurada</p>
+              </div>
+            </div>
+
+            <!-- Estado 2: Vista previa -->
+            <div id="preview-state" class="w-full mb-6 hidden">
+              <div class="bg-gray-50 rounded-[20px] p-6 border-2 border-gray-200">
+                <p class="text-sm text-gray-600 mb-3 text-center">Vista previa:</p>
+                <img id="signature-preview" src="" alt="Firma" class="max-h-32 mx-auto object-contain" />
+              </div>
+            </div>
+
+            <!-- Botones -->
+            <label class="w-full block cursor-pointer">
+              <input type="file" id="file-input" accept="image/png" class="hidden" />
+              <div id="upload-btn-text"
+                class="w-full bg-gradient-to-r from-red-600 to-red-500 text-white p-5 rounded-[30px] font-bold shadow-lg transition-all hover:shadow-xl text-center">
+                Subir Firma PNG
+              </div>
+            </label>
+
+            <button id="delete-btn"
+              class="w-full mt-3 bg-white text-red-600 p-5 rounded-[30px] font-bold shadow-md transition-all hover:shadow-lg border-2 border-red-600 hidden">
+              Eliminar Firma
+            </button>
+
+            <!-- Requisitos -->
+            <div class="mt-6 p-4 bg-blue-50 rounded-[20px] w-full">
+              <p class="text-xs text-gray-600 mb-1"><strong>Requisitos:</strong></p>
+              <ul class="text-xs text-gray-500 space-y-1">
+                <li>• Formato: PNG con fondo transparente</li>
+                <li>• Tamaño recomendado: 400x150 px</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- termina contenido derecha -->
       </div>
     </div>
   </div>
 
-  <!-- Lógica de control en JavaScript -->
   <script>
     const fileInput = document.getElementById('file-input');
     const emptyState = document.getElementById('empty-state');
@@ -97,38 +122,55 @@
     const uploadBtnText = document.getElementById('upload-btn-text');
     const deleteBtn = document.getElementById('delete-btn');
 
-    // Manejar la carga del archivo
-    fileInput.addEventListener('change', function(e) {
+    // 1. Al cargar la página, verificar si ya hay una firma guardada
+    window.onload = function () {
+      const savedSignature = localStorage.getItem('firmaJefe');
+      if (savedSignature) {
+        mostrarFirma(savedSignature);
+      }
+    };
+
+    // Función para mostrar la firma en la UI
+    function mostrarFirma(dataUrl) {
+      signaturePreview.src = dataUrl;
+      emptyState.classList.add('hidden');
+      previewState.classList.remove('hidden');
+      deleteBtn.classList.remove('hidden');
+      uploadBtnText.textContent = 'Cambiar Firma';
+    }
+
+    // 2. Manejar la carga del archivo
+    fileInput.addEventListener('change', function (e) {
       const file = e.target.files[0];
-      
+
       if (file && file.type === "image/png") {
         const reader = new FileReader();
-        
-        reader.onload = function(event) {
-          // Asignar la imagen cargada al src del preview
-          signaturePreview.src = event.target.result;
-          
-          // Intercambiar estados visuales
-          emptyState.classList.add('hidden');
-          previewState.classList.remove('hidden');
-          deleteBtn.classList.remove('hidden');
-          uploadBtnText.textContent = 'Cambiar Firma';
+
+        reader.onload = function (event) {
+          const dataUrl = event.target.result;
+
+          // Guardar en localStorage
+          localStorage.setItem('firmaJefe', dataUrl);
+
+          // Mostrar en pantalla
+          mostrarFirma(dataUrl);
         }
-        
+
         reader.readAsDataURL(file);
       } else if (file) {
         alert("Por favor, selecciona solo archivos en formato PNG.");
-        fileInput.value = ''; // Resetear input si no es PNG
       }
     });
 
-    // Manejar la eliminación de la firma
-    deleteBtn.addEventListener('click', function() {
-      // Limpiar el input y la imagen
+    // 3. Manejar la eliminación de la firma
+    deleteBtn.addEventListener('click', function () {
+      // Eliminar de localStorage
+      localStorage.removeItem('firmaJefe');
+
+      // Resetear UI
       fileInput.value = '';
       signaturePreview.src = '';
-      
-      // Regresar al estado inicial
+
       emptyState.classList.remove('hidden');
       previewState.classList.add('hidden');
       deleteBtn.classList.add('hidden');
@@ -137,4 +179,5 @@
   </script>
 
 </body>
+
 </html>

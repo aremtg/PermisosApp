@@ -1,3 +1,5 @@
-.gradiente {
-    background-image: linear-gradient(to bottom, #009058, #02955d, #039961, #059e66, #07a36b, #32ac77, #4ab684, #5ebf90, #84cea7, #a7ddbf, #c8ecd7, #e9fbf0);
+.bg-principal {
+    background-image: linear-gradient(to bottom, #c90000, #df5f00, #ee9700, #f8cc34, #ffff6b);
+
+
 }
