@@ -1,160 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Jefe - Bomberos Voluntarios Yopal</title>
-    <link rel="stylesheet" href="/login.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio</title>
+  <link rel="stylesheet" href="login.css" />
+    <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-
-    <div class="w-full max-w-md lg:max-w-7xl h-full lg:rounded-3xl lg:shadow-2xl lg:my-8 lg:h-[calc(100%-4rem)] overflow-hidden bg-white">
-
-        <div class="h-full flex flex-col lg:flex-row ">
-            <!-- gradiente y menu derecha-->
-            <div class="px-6 py-8 pb-12 lg:pb-8 rounded-b-3xl lg:rounded-none lg:w-80 flex-shrink-0 lg:text-center bg-principal">
-                <!-- caja logo mas botones -->
-                <div class="flex flex-col lg:flex-col lg:items-center lg:gap-6">
-                    <!-- caja de botones -->
-                    <div class="flex self-end gap-2">
-                        <button class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
-                                </path>
-                            </svg>
-                        </button>
-                        <a href="login.html" class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                    <!-- temina caja -->
-                    <!-- logo -->
-                    <img src="./img/COMANDANTE.jpeg" alt="Bomberos" class="w-32 h-32 lg:w-32 lg:h-32 rounded-full mb-4 object-cover border-4 border-white " />
-                </div>
-
-                 <h1 class="text-white text-2xl font-bold">Hola, Comandante <span class="">Rafael Rojas</span></h1>
-                 <p class="text-white/90 text-sm lg:text-base mt-1">
-                    Panel de Administración para jefes de personal, aqui podras crear, revisar, otorgar y rechachar
-                    permisos.</p>
-            </div>
-            <!-- izquierda -->
-            <div class="px-6 -mt-6 lg:mt-0 flex-1 overflow-y-auto pb-6 lg:px-12 lg:py-12 lg:bg-gray-50">
-                <div class="lg:grid lg:grid-cols-2 lg:gap-6">
-                    <!-- boton -->
-                    <a href="/vistas-usuario/crear-permiso.html"
-                        class="block w-full bg-white p-6 rounded-[30px] shadow-lg mb-4 lg:mb-0 transition-all hover:shadow-xl hover:scale-105"
-                        style="border: 1px solid #f3f4f6;">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 4v16m8-8H4"></path>
-                                </svg>
-                            </div>
-                            <div class="text-left">
-                                <h3 class="text-gray-900 font-bold text-lg lg:text-xl">Generar Permiso</h3>
-                                <p class="text-gray-500 text-sm">Nueva solicitud</p>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- boton -->
-                    <a href="historial.html"
-                        class="block w-full bg-white p-6 rounded-[30px] shadow-md mb-4 lg:mb-0 transition-all hover:shadow-lg hover:scale-105"
-                        style="border: 1px solid #e5e7eb;">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <div class="text-left">
-                                <h3 class="text-gray-900 font-bold text-lg lg:text-xl">Mis Permisos</h3>
-                                <p class="text-gray-500 text-sm">Permisos que generé</p>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- boton -->
-                    <a href="/vistas-jefe/permisos-firmar.html"
-                        class="block w-full bg-white p-6 rounded-[30px] shadow-md mb-4 lg:mb-0 transition-all hover:shadow-lg hover:scale-105"
-                        style="border: 1px solid #e5e7eb;">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center relative">
-                                <!-- svg o icono -->
-                                <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
-                                    </path>
-                                </svg>
-                                <!-- numerito indicador de notificaciones -->
-                                <span class="absolute -top-1 -right-1 w-5 h-5 lg:w-6 lg:h-6 bg-red-600 rounded-full text-white text-xs flex items-center justify-center font-bold">2</span>
-                            </div>
-                            <div class="text-left">
-                                <h3 class="text-gray-900 font-bold text-lg lg:text-xl">Permisos por Firmar</h3>
-                                <p class="text-gray-500 text-sm">Revisar solicitudes</p>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- boton -->
-                    <a href="permisos-firmados.html"
-                        class="block w-full bg-white p-6 rounded-[30px] shadow-md mb-4 lg:mb-0 transition-all hover:shadow-lg hover:scale-105"
-                        style="border: 1px solid #e5e7eb;">
-                        <div class="flex items-center gap-4">
-                            <!-- svg o icono -->
-                            <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                            </div>
-                            <div class="text-left">
-                                <h3 class="text-gray-900 font-bold text-lg lg:text-xl">Permisos Firmados</h3>
-                                <p class="text-gray-500 text-sm">Historial aprobados</p>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- boton -->
-                    <a href="configuracion-firma.html"
-                        class="block w-full bg-white p-6 rounded-[30px] shadow-md transition-all hover:shadow-lg hover:scale-105 lg:col-span-2"
-                        style="border: 1px solid #e5e7eb;">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-gray-700 to-gray-600 rounded-full flex items-center justify-center">
-                                <!-- svg o icono -->
-                                <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
-                                    </path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                </svg>
-                            </div>
-                            <div class="text-left">
-                                <h3 class="text-gray-900 font-bold text-lg lg:text-xl">Configuración de Firma</h3>
-                                <p class="text-gray-500 text-sm">Subir firma PNG</p>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
+  <div class="w-full max-w-md lg:max-w-7xl h-full lg:rounded-3xl lg:shadow-2xl lg:my-8 lg:h-[calc(100%-4rem)] overflow-hidden bg-white">
+    <div class="h-full flex flex-col lg:flex-row">
+      <!-- Panel lateral -->
+      <div class="px-6 py-8 pb-12 lg:pb-8 rounded-b-3xl lg:rounded-none lg:w-80 flex-shrink-0 lg:text-center bg-principal">
+        <div class="flex flex-col lg:flex-col lg:items-center lg:gap-6">
+          <div class="flex self-end gap-2">
+            <button class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                </path>
+              </svg>
+            </button>
+            <a href="login.html" class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+              </svg>
+            </a>
+          </div>
+          <img src="./img/COMANDANTE.jpeg" alt="Bomberos"
+            class="w-32 h-32 lg:w-32 lg:h-32 rounded-full mb-4 object-cover border-4 border-white" />
         </div>
+
+        <h1 class="text-white text-2xl font-bold">
+          Hola, Comandante <span class="">Rafael Rojas</span>
+        </h1>
+        <p class="text-white/90 text-sm lg:text-base mt-1">
+          Panel de Administración para jefes de personal, aqui podras crear,
+          revisar, otorgar y rechachar permisos.
+        </p>
+      </div>
+      <!-- derecha -->
+      <div class="px-6 -mt-6 lg:mt-0 flex-1 overflow-y-auto pb-6 lg:px-12 lg:py-12 lg:bg-gray-50">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-6">
+          <!-- boton -->
+          <a href="/vistas-usuario/crear-permiso.html"
+            class="block w-full bg-white p-6 rounded-[30px] shadow-lg mb-4 lg:mb-0 transition-all hover:shadow-xl hover:scale-105"
+            style="border: 1px solid #f3f4f6">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+              </div>
+              <div class="text-left">
+                <h3 class="text-gray-900 font-bold text-lg lg:text-xl">
+                  Generar Permiso
+                </h3>
+                <p class="text-gray-500 text-sm">Nueva solicitud</p>
+              </div>
+            </div>
+          </a>
+          <!-- boton -->
+          <a href="historial.html"
+            class="block w-full bg-white p-6 rounded-[30px] shadow-md mb-4 lg:mb-0 transition-all hover:shadow-lg hover:scale-105"
+            style="border: 1px solid #e5e7eb">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                  </path>
+                </svg>
+              </div>
+              <div class="text-left">
+                <h3 class="text-gray-900 font-bold text-lg lg:text-xl">
+                  Mis Permisos
+                </h3>
+                <p class="text-gray-500 text-sm">Permisos que generé</p>
+              </div>
+            </div>
+          </a>
+          <!-- boton -->
+          <a href="/vistas-jefe/permisos-firmar.html"
+            class="block w-full bg-white p-6 rounded-[30px] shadow-md mb-4 lg:mb-0 transition-all hover:shadow-lg hover:scale-105"
+            style="border: 1px solid #e5e7eb">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center relative">
+                <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                  </path>
+                </svg>
+                <!-- numerito indicador de notificaciones -->
+                <span
+                  class="absolute -top-1 -right-1 w-5 h-5 lg:w-6 lg:h-6 bg-red-600 rounded-full text-white text-xs flex items-center justify-center font-bold">2</span>
+              </div>
+              <div class="text-left">
+                <h3 class="text-gray-900 font-bold text-lg lg:text-xl">
+                  Permisos por Firmar
+                </h3>
+                <p class="text-gray-500 text-sm">Revisar solicitudes</p>
+              </div>
+            </div>
+          </a>
+          <!-- boton -->
+          <a href="permisos-firmados.html"
+            class="block w-full bg-white p-6 rounded-[30px] shadow-md mb-4 lg:mb-0 transition-all hover:shadow-lg hover:scale-105"
+            style="border: 1px solid #e5e7eb">
+            <div class="flex items-center gap-4">
+              <!-- svg o icono -->
+              <div
+                class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div class="text-left">
+                <h3 class="text-gray-900 font-bold text-lg lg:text-xl">
+                  Permisos Firmados
+                </h3>
+                <p class="text-gray-500 text-sm">Historial aprobados</p>
+              </div>
+            </div>
+          </a>
+          <!-- boton -->
+          <a href="configuracion-firma.html"
+            class="block w-full bg-white p-6 rounded-[30px] shadow-md transition-all hover:shadow-lg hover:scale-105 lg:col-span-2"
+            style="border: 1px solid #e5e7eb">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-gray-700 to-gray-600 rounded-full flex items-center justify-center">
+                <!-- svg o icono -->
+                <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                  </path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div class="text-left">
+                <h3 class="text-gray-900 font-bold text-lg lg:text-xl">
+                  Configuración de Firma
+                </h3>
+                <p class="text-gray-500 text-sm">Subir firma PNG</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
 
-</html>
+</html> 

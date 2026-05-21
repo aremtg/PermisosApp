@@ -2,197 +2,296 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisión de Permiso - Bomberos Yopal</title>
-    <link rel="stylesheet" href="../login.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revisión de Permiso - Bomberos Yopal</title>
+  <link rel="stylesheet" href="../login.css" />
+    <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body class="h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-
-    <div class="w-full max-w-md lg:max-w-7xl h-full lg:rounded-3xl lg:shadow-2xl lg:my-8 lg:h-[calc(100%-4rem)] overflow-hidden bg-white">
-
-        <div class="h-full flex flex-col lg:flex-row ">
-            <!-- gradiente y menu derecha-->
-            <div class="px-6 py-8 pb-12 lg:pb-8 rounded-b-3xl lg:rounded-none lg:w-80 flex-shrink-0 lg:text-center bg-principal">
-                <!-- caja logo mas botones -->
-                <div class="flex flex-col lg:flex-col lg:items-center lg:gap-6">
-                    <!-- caja de botones -->
-                    <div class="flex self-end gap-2">
-                        <button class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
-                                </path>
-                            </svg>
-                        </button>
-                        <a href="/login.html" class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                    <!-- temina caja -->
-                    <!-- logo -->
-                    <img src="../img/COMANDANTE.jpeg" alt="Bomberos" class="w-32 h-32 lg:w-32 lg:h-32 rounded-full mb-4 object-cover border-4 border-white " />
-                </div>
-
-                 <h1 class="text-white text-2xl font-bold">Hola, Comandante <span class="">Rafael Rojas</span></h1>
-                 <p class="text-white/90 text-sm lg:text-base mt-1">
-                    Panel de Administración para jefes de personal, aqui podras crear, revisar, otorgar y rechachar
-                    permisos.</p>
+  <div class="w-full max-w-md lg:max-w-7xl h-full lg:rounded-3xl lg:shadow-2xl lg:my-8 lg:h-[calc(100%-4rem)] overflow-hidden">
+    <div class="h-full flex flex-col lg:flex-row">
+      <!-- Panel lateral -->
+      <div class="px-6 py-8 pb-12 lg:pb-8 rounded-b-3xl lg:rounded-none lg:w-80 flex-shrink-0 lg:text-center bg-principal">
+          <div class="flex flex-col lg:flex-col lg:items-center lg:gap-6">
+            <div class="flex self-end gap-2">
+              <button
+                class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  ></path>
+                </svg>
+              </button>
+              <a
+                href="/login.html"
+                class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                  ></path>
+                </svg>
+              </a>
             </div>
-            <!-- izquierda -->
-            <div class="px-6 -mt-6 lg:mt-0 flex-1 overflow-y-auto pb-6 lg:px-12 lg:py-12 lg:bg-gray-50 relative">
-                <!-- Contenedor superior para el botón de Back -->
+            <img
+              src="../img/COMANDANTE.jpeg"
+              alt="Bomberos"
+              class="w-32 h-32 lg:w-32 lg:h-32 rounded-full mb-4 object-cover border-4 border-white"
+            />
+          </div>
+
+          <h1 class="text-white text-2xl font-bold">
+            Hola, Comandante <span class="">Rafael Rojas</span>
+          </h1>
+          <p class="text-white/90 text-sm lg:text-base mt-1">
+            Panel de Administración para jefes de personal, aqui podras crear,
+            revisar, otorgar y rechachar permisos.
+          </p>
+      </div>
+      <!-- derecha -->
+      <div class="px-6 -mt-6 lg:mt-0 flex-1 overflow-y-auto pb-6 lg:px-12 lg:py-12 lg:bg-gray-50 relative">
           <div class="absolute top-3 left-8">
-            <button onclick="history.back()"
+            <button
+              onclick="history.back()"
               class="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-red-600 to-red-500 rounded-full hover:bg-gray-300 transition-all shadow-lg"
-              aria-label="Volver">
-              <img src="/icons/lef.svg" alt="" class="w-7 text-white">
+              aria-label="Volver"
+            >
+              <img src="/icons/lef.svg" alt="" class="w-7 text-white" />
             </button>
           </div>
-                <div class="bg-white rounded-[30px] shadow-lg p-8 mx-auto max-w-lg">
-                    
-                   <h2 class="text-2xl text-center font-bold text-gray-900 mb-8 border-b pb-4">Detalles de Solicitud</h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                            <p class="text-xs font-bold text-gray-400 uppercase">Cédula</p>
-                            <p id="ver-cedula" class="text-gray-900 font-bold text-lg"></p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                            <p class="text-xs font-bold text-gray-400 uppercase">Tipo</p>
-                            <p id="ver-tipo" class="text-gray-900 font-bold text-lg capitalize"></p>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                            <p class="text-xs font-bold text-gray-400 uppercase">Periodo</p>
-                            <p class="text-gray-900 font-bold"><span id="ver-fInicio"></span> a <span id="ver-fFin"></span></p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                            <p class="text-xs font-bold text-gray-400 uppercase">Horario</p>
-                            <p class="text-gray-900 font-bold"><span id="ver-hInicio"></span> a <span id="ver-hFin"></span></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Motivo -->
-                <div class="mt-6 bg-gray-50 p-6 rounded-[20px] border border-gray-100">
-                    <p class="text-xs font-bold text-gray-400 uppercase mb-2">Motivo</p>
-                    <p id="ver-motivo" class="text-gray-700 italic"></p>
-                </div>
+          <div class="bg-white rounded-[30px] shadow-lg p-8 mx-auto max-w-lg">
+            <h2
+              class="text-2xl text-center font-bold text-gray-900 mb-8 border-b pb-4"
+            >
+              Detalles de Solicitud
+            </h2>
 
-                <!-- Firmas -->
-                <div class="mt-8 border-t pt-8 grid grid-cols-2 gap-6">
-                    <div class="text-center">
-                        <p class="text-xs font-bold text-gray-400 uppercase mb-4">Firma Solicitante</p>
-                        <div class="h-24 border-2 border-gray-200 rounded-2xl flex items-center justify-center bg-white">
-                            <img id="ver-firma" class="max-h-20 object-contain">
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-xs font-bold text-gray-400 uppercase mb-4">Firma Jefe Inmediato</p>
-                        <div id="contenedor-firma-jefe" class="h-24 border-2 border-dashed border-gray-300 rounded-2xl flex items-center justify-center bg-white transition-all">
-                            <img id="firma-jefe-preview" class="max-h-20 object-contain">
-                        </div>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-4">
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                  <p class="text-xs font-bold text-gray-400 uppercase">
+                    Cédula
+                  </p>
+                  <p
+                    id="ver-cedula"
+                    class="text-gray-900 font-bold text-lg"
+                  ></p>
                 </div>
-
-                <!-- Botones -->
-                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <button onclick="rechazar()" class="w-full py-4 rounded-[20px] font-bold border-2 border-red-500 text-red-500 hover:bg-red-50 transition-all">Rechazar</button>
-                    <button onclick="firmar()" class="w-full py-4 rounded-[20px] font-bold bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/30 hover:scale-[1.02] transition-all">Firmar</button>
-                    <button onclick="generarPDF()" class="w-full py-4 rounded-[20px] font-bold bg-gray-900 text-white hover:bg-gray-800 transition-all">Generar PDF</button>
-                    <button onclick="enviar()" class="w-full py-4 rounded-[20px] font-bold bg-gradient-to-r from-emerald-600 to-emerald-500 text-white shadow-lg shadow-emerald-500/30 hover:scale-[1.02] transition-all">Enviar</button>
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                  <p class="text-xs font-bold text-gray-400 uppercase">Tipo</p>
+                  <p
+                    id="ver-tipo"
+                    class="text-gray-900 font-bold text-lg capitalize"
+                  ></p>
                 </div>
-
+              </div>
+              <div class="space-y-4">
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                  <p class="text-xs font-bold text-gray-400 uppercase">
+                    Periodo
+                  </p>
+                  <p class="text-gray-900 font-bold">
+                    <span id="ver-fInicio"></span> a <span id="ver-fFin"></span>
+                  </p>
                 </div>
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                  <p class="text-xs font-bold text-gray-400 uppercase">
+                    Horario
+                  </p>
+                  <p class="text-gray-900 font-bold">
+                    <span id="ver-hInicio"></span> a <span id="ver-hFin"></span>
+                  </p>
+                </div>
+              </div>
             </div>
-        </div>
+            <!-- Motivo -->
+            <div
+              class="mt-6 bg-gray-50 p-6 rounded-[20px] border border-gray-100"
+            >
+              <p class="text-xs font-bold text-gray-400 uppercase mb-2">
+                Motivo
+              </p>
+              <p id="ver-motivo" class="text-gray-700 italic"></p>
+            </div>
+
+            <!-- Firmas -->
+            <div class="mt-8 border-t pt-8 grid grid-cols-2 gap-6">
+              <div class="text-center">
+                <p class="text-xs font-bold text-gray-400 uppercase mb-4">
+                  Firma Solicitante
+                </p>
+                <div
+                  class="h-24 border-2 border-gray-200 rounded-2xl flex items-center justify-center bg-white"
+                >
+                  <img id="ver-firma" class="max-h-20 object-contain" />
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="text-xs font-bold text-gray-400 uppercase mb-4">
+                  Firma Jefe Inmediato
+                </p>
+                <div
+                  id="contenedor-firma-jefe"
+                  class="h-24 border-2 border-dashed border-gray-300 rounded-2xl flex items-center justify-center bg-white transition-all"
+                >
+                  <img
+                    id="firma-jefe-preview"
+                    class="max-h-20 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <button
+                onclick="rechazar()"
+                class="w-full py-4 rounded-[20px] font-bold border-2 border-red-500 text-red-500 hover:bg-red-50 transition-all"
+              >
+                Rechazar
+              </button>
+              <button
+                onclick="firmar()"
+                class="w-full py-4 rounded-[20px] font-bold bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/30 hover:scale-[1.02] transition-all"
+              >
+                Firmar
+              </button>
+              <button
+                onclick="generarPDF()"
+                class="w-full py-4 rounded-[20px] font-bold bg-gray-900 text-white hover:bg-gray-800 transition-all"
+              >
+                Generar PDF
+              </button>
+              <button
+                onclick="enviar()"
+                class="w-full py-4 rounded-[20px] font-bold bg-gradient-to-r from-emerald-600 to-emerald-500 text-white shadow-lg shadow-emerald-500/30 hover:scale-[1.02] transition-all"
+              >
+                Enviar
+              </button>
+            </div>
+          </div>
+      </div>
     </div>
-        <script>
-            // Cargar datos del permiso pendiente
-            const datos = JSON.parse(localStorage.getItem('permisoPendiente'));
-            if (datos) {
-                document.getElementById('ver-cedula').innerText = datos.cedula;
-                document.getElementById('ver-tipo').innerText = datos.tipo;
-                document.getElementById('ver-fInicio').innerText = datos.fechaInicio;
-                document.getElementById('ver-fFin').innerText = datos.fechaFin;
-                document.getElementById('ver-hInicio').innerText = datos.horaInicio;
-                document.getElementById('ver-hFin').innerText = datos.horaFin;
-                document.getElementById('ver-motivo').innerText = datos.motivo;
-                document.getElementById('ver-firma').src = datos.firma;
-            }
-            // funcion de firmar permiso
-            function firmar() {
-                const firmaJefe = localStorage.getItem('firmaJefe');
-                if (firmaJefe) {
-                    document.getElementById('firma-jefe-preview').src = firmaJefe;
-                    document.getElementById('contenedor-firma-jefe').classList.replace('border-dashed', 'border-solid');
-                } else { alert("Firma no configurada"); }
-            }
-            // funcion de rechazar permiso
-            function rechazar() {
-                if (confirm("¿Rechazar este permiso?")) { localStorage.removeItem('permisoPendiente'); window.location.href = '../jefes-inicio.html'; }
-            }
+  </div>
 
-            function enviar() { alert("Solicitud enviada."); }
-            // funcion de generar PDF
-            async function generarPDF() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF('p', 'mm', 'a4');
-    
-    // Obtenemos los elementos de las firmas
-    const imgSolicitante = document.getElementById('ver-firma');
-    const imgJefe = document.getElementById('firma-jefe-preview');
+  <script>
+      // Cargar datos del permiso pendiente
+      const datos = JSON.parse(localStorage.getItem("permisoPendiente"));
+      if (datos) {
+        document.getElementById("ver-cedula").innerText = datos.cedula;
+        document.getElementById("ver-tipo").innerText = datos.tipo;
+        document.getElementById("ver-fInicio").innerText = datos.fechaInicio;
+        document.getElementById("ver-fFin").innerText = datos.fechaFin;
+        document.getElementById("ver-hInicio").innerText = datos.horaInicio;
+        document.getElementById("ver-hFin").innerText = datos.horaFin;
+        document.getElementById("ver-motivo").innerText = datos.motivo;
+        document.getElementById("ver-firma").src = datos.firma;
+      }
+      // funcion de firmar permiso
+      function firmar() {
+        const firmaJefe = localStorage.getItem("firmaJefe");
+        if (firmaJefe) {
+          document.getElementById("firma-jefe-preview").src = firmaJefe;
+          document
+            .getElementById("contenedor-firma-jefe")
+            .classList.replace("border-dashed", "border-solid");
+        } else {
+          alert("Firma no configurada");
+        }
+      }
+      // funcion de rechazar permiso
+      function rechazar() {
+        if (confirm("¿Rechazar este permiso?")) {
+          localStorage.removeItem("permisoPendiente");
+          window.location.href = "../jefes-inicio.html";
+        }
+      }
 
-    // Validación estricta: verificamos que existan y tengan contenido
-    if (!imgJefe.src || imgJefe.src.includes('about:blank') || imgJefe.src === window.location.href) {
-        alert("La firma del Comandante no ha sido cargada. Por favor, haz clic en 'Firmar' primero.");
-        return;
-    }
+      function enviar() {
+        alert("Solicitud enviada.");
+      }
+      // funcion de generar PDF
+      async function generarPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF("p", "mm", "a4");
 
-    // Título y datos
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(16);
-    doc.text("SOLICITUD DE PERMISO, VACACIONES O LICENCIA", 105, 15, { align: 'center' });
-    doc.line(15, 20, 195, 20);
+        // Obtenemos los elementos de las firmas
+        const imgSolicitante = document.getElementById("ver-firma");
+        const imgJefe = document.getElementById("firma-jefe-preview");
 
-    doc.setFontSize(11);
-    doc.setFont("helvetica", "normal");
-    
-    doc.text(`Cédula: ${datos.cedula}`, 20, 35);
-    doc.text(`Tipo de permiso: ${datos.tipo.toUpperCase()}`, 20, 45);
-    doc.text(`Periodo: ${datos.fechaInicio} al ${datos.fechaFin}`, 20, 55);
-    doc.text(`Horario: ${datos.horaInicio} a ${datos.horaFin}`, 20, 65);
-    doc.text("Motivo:", 20, 80);
-    doc.text(doc.splitTextToSize(datos.motivo, 170), 20, 87);
+        // Validación estricta: verificamos que existan y tengan contenido
+        if (
+          !imgJefe.src ||
+          imgJefe.src.includes("about:blank") ||
+          imgJefe.src === window.location.href
+        ) {
+          alert(
+            "La firma del Comandante no ha sido cargada. Por favor, haz clic en 'Firmar' primero.",
+          );
+          return;
+        }
 
-    // Firmas con validación de carga
-    const firmaY = 120; 
-    doc.setFont("helvetica", "bold");
-    doc.text("Firma Solicitante", 45, firmaY + 5, { align: 'center' });
-    doc.text("Firma Jefe inmediato", 160, firmaY + 5, { align: 'center' });
-    doc.line(20, firmaY , 70, firmaY );
-    doc.line(135, firmaY , 185, firmaY );
+        // Título y datos
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(16);
+        doc.text("SOLICITUD DE PERMISO, VACACIONES O LICENCIA", 105, 15, {
+          align: "center",
+        });
+        doc.line(15, 20, 195, 20);
 
-    // Insertar imágenes capturando el src actual
-    try {
-        doc.addImage(imgSolicitante.src, 'PNG', 25, firmaY - 18, 40, 15);
-        doc.addImage(imgJefe.src, 'PNG', 140, firmaY - 15, 40, 15);
-        doc.save(`Permiso_${datos.cedula}.pdf`);
-    } catch (e) {
-        console.error("Error al añadir firmas:", e);
-        alert("Error al procesar las firmas. Asegúrate de que las imágenes sean válidas.");
-    }
-}
-</script>
+        doc.setFontSize(11);
+        doc.setFont("helvetica", "normal");
+
+        doc.text(`Cédula: ${datos.cedula}`, 20, 35);
+        doc.text(`Tipo de permiso: ${datos.tipo.toUpperCase()}`, 20, 45);
+        doc.text(`Periodo: ${datos.fechaInicio} al ${datos.fechaFin}`, 20, 55);
+        doc.text(`Horario: ${datos.horaInicio} a ${datos.horaFin}`, 20, 65);
+        doc.text("Motivo:", 20, 80);
+        doc.text(doc.splitTextToSize(datos.motivo, 170), 20, 87);
+
+        // Firmas con validación de carga
+        const firmaY = 120;
+        doc.setFont("helvetica", "bold");
+        doc.text("Firma Solicitante", 45, firmaY + 5, { align: "center" });
+        doc.text("Firma Jefe inmediato", 160, firmaY + 5, { align: "center" });
+        doc.line(20, firmaY, 70, firmaY);
+        doc.line(135, firmaY, 185, firmaY);
+
+        // Insertar imágenes capturando el src actual
+        try {
+          doc.addImage(imgSolicitante.src, "PNG", 25, firmaY - 18, 40, 15);
+          doc.addImage(imgJefe.src, "PNG", 140, firmaY - 15, 40, 15);
+          doc.save(`Permiso_${datos.cedula}.pdf`);
+        } catch (e) {
+          console.error("Error al añadir firmas:", e);
+          alert(
+            "Error al procesar las firmas. Asegúrate de que las imágenes sean válidas.",
+          );
+        }
+      }
+  </script>
 </body>
 
 </html>
